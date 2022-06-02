@@ -1,0 +1,122 @@
+:root {
+    --primer-color: #23231A;
+    --segundo-color: #F6F8FF;
+    --segundo-color-var: #ffffff21;
+    --tercer-color: rgb(152, 143, 42);
+    --tercer-color-var: #fff159;
+}
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #988f2a #e8e8e8;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #e8e8e8;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #988f2a;
+    border-radius: 12px;
+    border: 0px none #ffffff;
+}
+
+/* FIN DE SCROLLBAR */
+.a {
+    height: 150rem;
+}
+
+.btnHeader {
+    text-decoration: none;
+    color: var(--tercer-color-var);
+    padding: 1.5rem;
+}
+
+.btnHeader:hover {
+    color: var(--segundo-color);
+}
+
+.filaHeader {
+    background-color: var(--primer-color);
+    height: 5rem;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.colHeader {
+    text-decoration: none;
+    color: var(--tercer-color);
+    text-align: center;
+    background-color: white;
+    padding: .5rem;
+}
+
+.contenedorBuscadorHeader {
+    position: sticky;
+    top: 0px;
+}
+
+
+.buscadorHeader {
+    background-color: var(--tercer-color);
+    height: 5rem;
+    align-items: center;
+    text-align: center;
+}
+
+.buscarForm {
+    justify-content: center;
+    display: flex;
+}
+
+.textBuscador {
+    border: none;
+    width: 80%;
+    height: 2.5rem;
+    border-radius: 10px 0px 0px 10px;
+    padding-left: 1rem;
+}
+
+.textBuscador:focus {
+    outline: none;
+}
+
+.btnBuscador {
+    outline: none;
+    border: none;
+    border-radius: 0px 10px 10px 0px;
+    width: 5rem;
+    background-color: var(--segundo-color);
+}
+
+.divImagen {
+    text-align: center;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    z-index: -5;
+    width: 100%;
+    height: 147rem;
+}
+
+.divImagen>h1 {
+    color: white;
+    opacity: 100%;
+    z-index: 2;
+    position: relative;
+    top: 200px;
+}
+
+.divImagen>img {
+    position: absolute;
+    height: 47rem;
+    z-index: 1;
+    opacity: 60%;
+}
