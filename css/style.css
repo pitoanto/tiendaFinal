@@ -106,17 +106,11 @@
     height: 147rem;
 }
 
-.divImagen>h1 {
-    color: white;
-    opacity: 100%;
-    z-index: 2;
-    position: relative;
-    top: 200px;
+.carousel-item {
+
+    background-color: var(--primer-color);
 }
 
-.divImagen>img {
-    position: absolute;
-    height: 47rem;
-    z-index: 1;
-    opacity: 60%;
+.imgCarousel {
+    opacity: 80%;
 }
