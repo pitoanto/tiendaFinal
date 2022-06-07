@@ -73,7 +73,7 @@
                 echo "Fallo al conectar a MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
             }
 
-            $consulta = "SELECT * FROM rapero LIMIT 10";
+            $consulta = "SELECT * FROM rapero ORDER BY RAND() LIMIT 10";
             if ($resultado = $mysqli->query($consulta)) {
                 while ($row = $resultado->fetch_assoc()) {
                     include "web/rapero.html";
