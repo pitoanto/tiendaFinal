@@ -68,30 +68,8 @@
         </div>
         <div class="row raperosFamosos">
 
-            <div class="col-12 col-sm-auto Rapero">
-                <div class="miRapero">
-                    <img src="img/rapero/sweetpain.jpg" alt="">
-                    <p>Rapero</p>
-                </div>
-            </div>
-            <div class="col-12 col-sm-auto Rapero">
-                <div class="miRapero">
-                    <img src="img/rapero/sweetpain.jpg" alt="">
-                    <p>Rapero</p>
-                </div>
-            </div>
-            <div class="col-12 col-sm-auto Rapero">
-                <div class="miRapero">
-                    <img src="img/rapero/sweetpain.jpg" alt="">
-                    <p>Rapero</p>
-                </div>
-            </div>
-            <div class="col-12 col-sm-auto Rapero">
-                <div class="miRapero">
-                    <img src="img/rapero/sweetpain.jpg" alt="">
-                    <p>Rapero</p>
-                </div>
-            </div>
+
+
         </div>
     </div>
 
