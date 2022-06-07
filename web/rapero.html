@@ -1,6 +1,15 @@
-<div class="col-12 col-sm-auto Rapero">
+<?php
+$mysqli = new mysqli("localhost", "root", "", "raperos");
+if ($mysqli->connect_errno) {
+    echo "Fallo al conectar a MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
+}
+?>
+hola
+<a href="#" class="col-12 col-sm-auto Rapero">
     <div class="miRapero">
-        <img src="" alt="">
-        <p>Rapero</p>
+        <?php
+    printf("<img src='%s' alt='%s' class='miRapero'><p>%s</p>", $fila["img"], $fila["nombre"], $fila["nombre"]);
+    ?>
+
     </div>
-</div>
+</a>
