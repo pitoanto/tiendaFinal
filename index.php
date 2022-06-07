@@ -67,7 +67,19 @@
             <div class="col-12 raperosFamososTitulo">Descubre nuestros raperos mejor valorados</div>
         </div>
         <div class="row raperosFamosos">
+            <?php
+            $mysqli = new mysqli("localhost", "root", "", "raperos");
+            if ($mysqli->connect_errno) {
+                echo "Fallo al conectar a MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
+            }
 
+            $consulta = "SELECT * FROM rapero LIMIT 10";
+            if ($resultado = $mysqli->query($consulta)) {
+                while ($row = $resultado->fetch_assoc()) {
+                    include "web/rapero.html";
+                }
+            };
+            ?>
 
 
         </div>
@@ -77,7 +89,6 @@
         <div class="row">
             <div class="serviciosTitulo">Nuestros servicios
                 <div class="HR"></div>
-
             </div>
             <div class="col servicios">
                 <p> Ofrecemos distintos raperos para su entretenimiento. Los mejores raperos a su disposición, tanto los dedicados a la música como a las batallas de gallos... Sí, esa salvajada inhumana que realizan ciertos jóvenes.</p>

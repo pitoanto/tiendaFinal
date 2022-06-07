@@ -3,13 +3,13 @@ $mysqli = new mysqli("localhost", "root", "", "raperos");
 if ($mysqli->connect_errno) {
     echo "Fallo al conectar a MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
 }
+
 ?>
-hola
-<div href="#" class="col-12 col-sm-auto Rapero">
+<a href="#" class="col-12 col-sm-3 Rapero">
     <div class="miRapero">
         <?php
-    printf("<img src='%s' alt='%s' class='miRapero'><p>%s</p>", $fila["img"], $fila["nombre"], $fila["nombre"]);
+    printf("<img src='%s' alt='%s' class='miRapero'><p>%s</p>", $row["img"], $row["nombre"], $row["nombre"]);
     ?>
 
     </div>
-</div>
+</a>
