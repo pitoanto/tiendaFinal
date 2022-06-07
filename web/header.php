@@ -19,7 +19,7 @@
             <a href="index.php" class="col-3 col-md-2 btnHeader">LOGO</a>
             <a href="index.php" class="d-none d-md-block col-md-4 btnHeader">INICIO</a>
             <a href="store.php" class="col-6 col-md-4 btnHeader">TIENDA</a>
-            <a href="#" class="col-3 col-md-2 btnHeader">LOGIN</a>
+            <a href="#" class="col-3 col-md-2 btnHeader">CUENTA</a>
         </div>
     </div>
     <div class="container-fluid contenedorBuscadorHeader">

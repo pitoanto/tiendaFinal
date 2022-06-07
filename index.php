@@ -19,7 +19,7 @@
             <a href="index.php" class="col-3 col-md-2 btnHeader">LOGO</a>
             <a href="index.php" class="d-none d-md-block col-md-4 btnHeader">INICIO</a>
             <a href="store.php" class="col-6 col-md-4 btnHeader">TIENDA</a>
-            <a href="#" class="col-3 col-md-2 btnHeader">LOGIN</a>
+            <a href="#" class="col-3 col-md-2 btnHeader">CUENTA</a>
         </div>
 
     </div>
@@ -82,7 +82,38 @@
             <div class="col-12 col-md-6"><a href="#" class="divLinkRegistro">Regístrate</a></div>
         </div>
     </div>
+    <div class="container-fluid">
+        <div class="row raperosFamosos">
+            <div class="col-12 raperosFamososTitulo">Descubre nuestros raperos mejor valorados</div>
+        </div>
+        <div class="row raperosFamosos">
 
+            <div class="col-12 col-sm-auto Rapero">
+                <div class="miRapero">
+                    <img src="img/rapero/sweetpain.jpg" alt="">
+                    <p>Rapero</p>
+                </div>
+            </div>
+            <div class="col-12 col-sm-auto Rapero">
+                <div class="miRapero">
+                    <img src="img/rapero/sweetpain.jpg" alt="">
+                    <p>Rapero</p>
+                </div>
+            </div>
+            <div class="col-12 col-sm-auto Rapero">
+                <div class="miRapero">
+                    <img src="img/rapero/sweetpain.jpg" alt="">
+                    <p>Rapero</p>
+                </div>
+            </div>
+            <div class="col-12 col-sm-auto Rapero">
+                <div class="miRapero">
+                    <img src="img/rapero/sweetpain.jpg" alt="">
+                    <p>Rapero</p>
+                </div>
+            </div>
+        </div>
+    </div>
     <?php
     include "web/footer.php";
     ?>

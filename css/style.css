@@ -126,10 +126,14 @@ html {
     height: 45rem;
 }
 
-.servicios {
+.servicios, .raperosFamosos {
     background-color: black;
     color: var(--segundo-color);
     padding: 1rem 0rem;
+}
+
+.raperosFamosos {
+    justify-content: center;
 }
 
 .serviciosTitulo {
@@ -141,6 +145,11 @@ html {
 .servicios>p {
     font-size: 20px;
     padding: 0rem 4rem;
+
+}
+
+.raperosFamososTitulo {
+    font-size: 32px;
 
 }
 
@@ -200,6 +209,7 @@ html {
     padding: 0rem 0rem 2rem 0rem;
 }
 
+
 .btnRedSocial {
     color: white;
 }
@@ -226,4 +236,25 @@ html {
 
 .calleSitio {
     padding: 1.5rem 0rem;
+}
+
+.Rapero {
+    margin: 1rem;
+    background-color: var(--primer-color);
+}
+
+.miRapero {
+    color: var(--segundo-color);
+    margin: 1rem;
+}
+
+.miRapero>img {
+    margin: 1rem 0rem;
+    height: 280px;
+    padding: 1rem;
+    background-color: var(--tercer-color);
+}
+
+.miRapero>p {
+    font-size: 32px;
 }
