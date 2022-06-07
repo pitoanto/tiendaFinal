@@ -64,16 +64,22 @@
 
     <div class="container-fluid">
         <div class="row">
+            <div class="serviciosTitulo">Nuestros servicios
+                <div class="HR"></div>
+
+            </div>
             <div class="col servicios">
-                <h1>Nuestros servicios</h1>
-                <p> Ofrecemos distintos raperos para su entretenimiento. <br> Con todo esto, acercamos a vuestras estrellas favoritas y extremadamente violentas a vuestras vidas, a ver si aprendéis lo que es música de verdad, y así conseguimos avanzar como sociedad, ya que los raperos son pura violencia sin sentido.</p>
+                <p> Ofrecemos distintos raperos para su entretenimiento. Los mejores raperos a su disposición, tanto los dedicados a la música como a las batallas de gallos... Sí, esa salvajada inhumana que realizan ciertos jóvenes.</p>
+            </div>
+            <div class="col servicios">
+                <p>Con todo esto, acercamos a vuestras estrellas favoritas y extremadamente violentas a vuestras vidas, a ver si aprendéis lo que es música de verdad, y así conseguimos avanzar como sociedad, ya que los raperos son pura violencia sin sentido.</p>
             </div>
         </div>
         <div class="row divRegistro">
-            <div class="col">
-                ¿Primera vez en nuestra web? <br> Regístrate para obtener los mejores precios
+            <div class="col-12 col-md-6">
+                <p> ¿Primera vez en nuestra web? <br> Regístrate para obtener los mejores precios</p>
             </div>
-            <div class="col"><a href="#" class="divLinkRegistro">Regístrate</a></div>
+            <div class="col-12 col-md-6"><a href="#" class="divLinkRegistro">Regístrate</a></div>
         </div>
     </div>
 

@@ -12,6 +12,8 @@ html {
 
 .container-fluid {
     text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 500;
 }
 
 /* ===== Scrollbar CSS ===== */
@@ -127,11 +129,19 @@ html {
 .servicios {
     background-color: black;
     color: var(--segundo-color);
-    padding: 5rem 0rem;
+    padding: 1rem 0rem;
 }
 
-.HRAtras {
-    background-color: var(--primer-color);
+.serviciosTitulo {
+    background-color: black;
+    color: var(--segundo-color);
+    font-size: 62px;
+}
+
+.servicios>p {
+    font-size: 20px;
+    padding: 0rem 4rem;
+
 }
 
 .HR {
@@ -148,7 +158,7 @@ html {
 }
 
 .RAPPERBUY {
-    padding: 3rem 0rem;
+    padding: 1rem 0rem 0rem 0rem;
     font-family: 'Oswald', sans-serif;
     font-weight: 100;
     font-size: 100px;
@@ -184,4 +194,36 @@ html {
 .divLinkRegistro:hover {
     color: #988f2a;
     background-color: var(--primer-color);
+}
+
+.redesSociales {
+    padding: 0rem 0rem 2rem 0rem;
+}
+
+.btnRedSocial {
+    color: white;
+}
+
+.Twitter:hover {
+    color: #1DA1F2;
+}
+
+.Facebook:hover {
+    color: #4267B2;
+}
+
+.Instagram:hover {
+    color: #E1306C;
+}
+
+.YouTube:hover {
+    color: #FF0000;
+}
+
+.WhatsApp:hover {
+    color: #25D366;
+}
+
+.calleSitio {
+    padding: 1.5rem 0rem;
 }
