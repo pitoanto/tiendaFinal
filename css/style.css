@@ -6,6 +6,14 @@
     --tercer-color-var: #fff159;
 }
 
+html {
+    min-width: min-content;
+}
+
+.container-fluid {
+    text-align: center;
+}
+
 /* ===== Scrollbar CSS ===== */
 /* Firefox */
 * {
@@ -41,6 +49,7 @@
 
 .btnHeader:hover {
     color: var(--segundo-color);
+    border-bottom: 2px solid var(--tercer-color);
 }
 
 .filaHeader {
@@ -107,10 +116,72 @@
 }
 
 .carousel-item {
-
     background-color: var(--primer-color);
 }
 
 .imgCarousel {
     opacity: 80%;
+    height: 45rem;
+}
+
+.servicios {
+    background-color: black;
+    color: var(--segundo-color);
+    padding: 5rem 0rem;
+}
+
+.HRAtras {
+    background-color: var(--primer-color);
+}
+
+.HR {
+    margin: auto;
+    height: 1px;
+    width: 85%;
+    background-color: var(--tercer-color-var);
+}
+
+.miFooter {
+    color: var(--segundo-color);
+    padding: 1.5rem 0rem;
+    background-color: var(--primer-color);
+}
+
+.RAPPERBUY {
+    padding: 3rem 0rem;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 100;
+    font-size: 100px;
+}
+
+
+.linkFooter {
+    text-decoration: none;
+    color: var(--segundo-color);
+}
+
+.linkFooter:hover {
+    color: var(--tercer-color);
+}
+
+.divRegistro {
+    padding: 2rem 5rem;
+    font-size: x-large;
+    font-weight: 400;
+    align-items: center;
+
+}
+
+.divLinkRegistro {
+    text-decoration: none;
+    color: #23231A;
+    padding: 1rem 5rem;
+    background-color: var(--tercer-color);
+    border-radius: 40px;
+    transition: 300ms;
+}
+
+.divLinkRegistro:hover {
+    color: #988f2a;
+    background-color: var(--primer-color);
 }
