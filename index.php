@@ -73,15 +73,13 @@
                 echo "Fallo al conectar a MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
             }
 
-            $consulta = "SELECT * FROM rapero ORDER BY RAND() LIMIT 10";
+            $consulta = "SELECT * FROM rapero ORDER BY RAND() LIMIT 4";
             if ($resultado = $mysqli->query($consulta)) {
                 while ($row = $resultado->fetch_assoc()) {
                     include "web/rapero.html";
                 }
             };
             ?>
-
-
         </div>
     </div>
 
@@ -101,7 +99,9 @@
             <div class="col-12 col-md-6">
                 <p> ¿Primera vez en nuestra web? <br> Regístrate para obtener los mejores precios</p>
             </div>
-            <div class="col-12 col-md-6"><a href="#" class="divLinkRegistro">Regístrate</a></div>
+
+            <a href="#" class="col-12 col-md-6 divLinkRegistro">Regístrate</a>
+
         </div>
     </div>
 

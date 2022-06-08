@@ -10,10 +10,12 @@ if ($mysqli->connect_errno) {
     <div class="row">
 
         <?php
-        $consulta = "SELECT * FROM rapero ORDER BY RAND() LIMIT 10";
+
+
+        $consulta = "SELECT * FROM rapero ORDER BY RAND()";
         if ($resultado = $mysqli->query($consulta)) {
             while ($row = $resultado->fetch_assoc()) {
-                include "web/rapero.html";
+                include "rapero.html";
             }
         };
         ?>

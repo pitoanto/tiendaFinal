@@ -7,12 +7,13 @@
 }
 
 html {
-    min-width: min-content;
+    max-width: auto;
 }
 
 .container-fluid {
     text-align: center;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: Helvetica, sans-serif, monospace;
+    letter-spacing: 2px;
     font-weight: 500;
 }
 
@@ -85,6 +86,7 @@ html {
 .buscarForm {
     justify-content: center;
     display: flex;
+    z-index: 20;
 }
 
 .textBuscador {
@@ -169,7 +171,8 @@ html {
     padding: 1rem 0rem 0rem 0rem;
     font-family: 'Oswald', sans-serif;
     font-weight: 100;
-    font-size: 100px;
+    font-size: 80px;
+    width: 100%;
 }
 
 
@@ -197,6 +200,7 @@ html {
     background-color: var(--tercer-color);
     border-radius: 40px;
     transition: 300ms;
+    width: 100%;
 }
 
 .divLinkRegistro:hover {
@@ -238,19 +242,20 @@ html {
 }
 
 .Rapero {
-    margin: 1rem;
+    margin: .5rem 0rem;
     background-color: var(--primer-color);
     text-decoration: none;
     transition: 100ms;
+    border: 1px solid white;
+    min-width: max-content;
 }
 
 .Rapero:hover {
-    transform: scale(1.05);
+    transform: scale(1.01);
 }
 
 .miRapero {
     color: var(--segundo-color);
-    margin: 1rem;
 }
 
 .miRapero>img {
@@ -262,4 +267,72 @@ html {
 
 .miRapero>p {
     font-size: 32px;
+}
+
+.nombreRapero {
+    text-transform: uppercase;
+    font-size: xx-large;
+}
+
+
+.tipoRapero {
+    text-transform: capitalize;
+    font-size: medium;
+}
+
+.fichaRaperoFondo {
+    background-color: var(--primer-color);
+}
+
+.tituloFichaRapero {
+    padding: .5rem;
+    color: var(--segundo-color);
+    font-size: 32px;
+    text-transform: uppercase;
+}
+
+
+.fichaRapero {
+    margin: auto;
+    padding: 1rem;
+}
+
+.fichaRapero>img {
+    border: 10px solid var(--segundo-color-var);
+}
+
+.nombreFichaRapero {
+    text-align: left;
+    text-transform: uppercase;
+    font-size: xx-large;
+    color: var(--segundo-color);
+    margin: 1rem 1rem;
+}
+
+.descripcionFichaRapero {
+    text-align: left;
+    margin: 0rem 1rem 3rem 1rem;
+    color: var(--segundo-color);
+}
+
+.contenedorFraseFichaRapero {
+    margin-left: 1.5rem;
+    text-align: left;
+    color: var(--segundo-color);
+}
+
+.fraseFichaRapero {
+    text-align: center;
+    margin: 2rem;
+    text-transform: uppercase;
+    font-size: 26px;
+    font-weight: lighter;
+    text-indent: 1rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-style: italic;
+}
+
+.precioFichaRapero {
+    text-align: left;
+    margin: 1rem;
 }

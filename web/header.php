@@ -24,8 +24,8 @@
     </div>
     <div class="container-fluid contenedorBuscadorHeader">
         <div class="row buscadorHeader">
-            <form class="col buscarForm">
-                <input type="text" name="buscarHeader" id="buscarHeader" class="textBuscador" placeholder="Buscar en toda la tienda...">
+            <form class="col buscarForm" action="web/buscador.php" method="GET">
+                <input type="text" name="buscar" id="buscar" class="textBuscador" placeholder="Buscar en toda la tienda...">
                 <input type="submit" value="Buscar" class="btnBuscador">
             </form>
         </div>
