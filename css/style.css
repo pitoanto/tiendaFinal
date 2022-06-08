@@ -170,8 +170,8 @@ html {
     padding: 1rem 0rem 0rem 0rem;
     font-family: 'Oswald', sans-serif;
     font-weight: 100;
-    font-size: 80px;
-    width: 100%;
+    font-size:4.8rem;
+    width: 90%;
 }
 
 
@@ -297,6 +297,7 @@ html {
 }
 
 .fichaRapero>img {
+    width: 100%;
     border: 10px solid var(--segundo-color-var);
     min-width: 100px;
 
