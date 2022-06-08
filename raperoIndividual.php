@@ -37,16 +37,21 @@ if ($resultado = $mysqli->query($consulta)) {
                     printf("<div class='descripcionFichaRapero'>%s</div>", $row["descripcion"]);
                     ?>
                 </div>
-                <div class="col-12 ">
-                    <div class="contenedorFraseFichaRapero">Frase destacada:
-                        <?php
-                        printf("<div class='fraseFichaRapero'><q>%s</q></div>", $row["frase"]);
-                        ?>
-                    </div>
-                </div>
                 <div class="col-12">
                     <?php
                     printf("<div class='precioFichaRapero'>%s€</div>", $row["precio"]);
+                    ?>
+                </div>
+                <div class="col-12">
+                    <form action="">
+                        <button class="btnComprar">
+                            comprar
+                        </button>
+                    </form>
+                </div>
+                <div class="col-12 ">
+                    <?php
+                    printf("<div class='fraseFichaRapero'><q>%s</q></div>", $row["frase"]);
                     ?>
                 </div>
             </div>

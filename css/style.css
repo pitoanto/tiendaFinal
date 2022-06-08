@@ -316,11 +316,6 @@ html {
     color: var(--segundo-color);
 }
 
-.contenedorFraseFichaRapero {
-    margin-left: 1.5rem;
-    text-align: left;
-    color: var(--segundo-color);
-}
 
 .fraseFichaRapero {
     text-align: center;
@@ -331,9 +326,31 @@ html {
     text-indent: 1rem;
     font-family: 'Courier New', Courier, monospace;
     font-style: italic;
+    color: var(--segundo-color);
 }
 
 .precioFichaRapero {
+    font-weight: bold;
+    text-indent: 1rem;
     text-align: left;
-    margin: 1rem;
+    margin: 0rem 1rem 1rem 1rem;
+    font-size: 36px;
+    color: var(--tercer-color);
+}
+
+.btnComprar {
+    padding: 1rem;
+    width: 50%;
+    border: none;
+    background-color: var(--tercer-color);
+    border-radius: 50px;
+    font-family: Helvetica, sans-serif, monospace;
+    text-transform: capitalize;
+    font-style: italic;
+    font-size: x-large;
+
+}
+
+.btnComprar:hover {
+    background-color: var(--tercer-color-var);
 }
