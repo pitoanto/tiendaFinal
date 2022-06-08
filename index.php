@@ -76,7 +76,7 @@
             $consulta = "SELECT * FROM rapero ORDER BY RAND() LIMIT 4";
             if ($resultado = $mysqli->query($consulta)) {
                 while ($row = $resultado->fetch_assoc()) {
-                    include "web/rapero.html";
+                    include "rapero.html";
                 }
             };
             ?>

@@ -1,5 +1,6 @@
 :root {
     --primer-color: #23231A;
+    --primer-color-var: #23231ae3;
     --segundo-color: #F6F8FF;
     --segundo-color-var: #ffffff21;
     --tercer-color: rgb(152, 143, 42);
@@ -80,13 +81,11 @@ html {
     height: 5rem;
     align-items: center;
     text-align: center;
-    margin-bottom: 1.2rem;
 }
 
 .buscarForm {
     justify-content: center;
     display: flex;
-    z-index: 20;
 }
 
 .textBuscador {
@@ -242,7 +241,7 @@ html {
 }
 
 .Rapero {
-    margin: .5rem 0rem;
+    margin: .1rem 0rem;
     background-color: var(--primer-color);
     text-decoration: none;
     transition: 100ms;
@@ -251,7 +250,7 @@ html {
 }
 
 .Rapero:hover {
-    transform: scale(1.01);
+    background-color: var(--primer-color-var);
 }
 
 .miRapero {
@@ -299,6 +298,8 @@ html {
 
 .fichaRapero>img {
     border: 10px solid var(--segundo-color-var);
+    min-width: 100px;
+
 }
 
 .nombreFichaRapero {
