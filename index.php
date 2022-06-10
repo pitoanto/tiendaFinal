@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -5,6 +8,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/favicon/favicon_1.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,10 +20,20 @@
 <body>
     <div class="container-fluid">
         <div class="row filaHeader">
-            <a href="index.php" class="col-3 col-md-2 btnHeader">LOGO</a>
+            <a href="index.php" class="col-3 col-md-2 btnHeader"><img src="img/favicon/favicon.png" alt="" class="logo"></a>
             <a href="index.php" class="d-none d-md-block col-md-4 btnHeader">INICIO</a>
             <a href="store.php" class="col-6 col-md-4 btnHeader">TIENDA</a>
-            <a href="#" class="col-3 col-md-2 btnHeader">CUENTA</a>
+            <?php
+            if (isset($_SESSION["log"])) {
+                if ($_SESSION["log"] == true) {
+                    printf('<a href="web/logout.php" class="col-3 col-md-2 btnHeader">SALIR</a>');
+                } else {
+                    printf('<a href="cuenta.php" class="col-3 col-md-2 btnHeader">CUENTA</a>');
+                }
+            } else {
+                printf('<a href="cuenta.php" class="col-3 col-md-2 btnHeader">CUENTA</a>');
+            }
+            ?>
         </div>
 
     </div>

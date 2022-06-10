@@ -17,9 +17,12 @@ if ($resultado = $mysqli->query($consulta)) {
     <div class="row">
         <div class="col-12">
             <?php
-            printf("<div class='tituloFichaRapero'>%s | %s</div>", $row["nombre"], $row["tipo"]);
+            printf("<div class='tituloFichaRapero'>%s<br><span class='tituloTipoFichaRapero'>%s</span></div>", $row["nombre"], $row["tipo"]);
             ?>
+            <div class="hr"></div>
+            <br>
         </div>
+
         <div class="col-12 col-md-4 fichaRapero">
             <?php
             printf("<img src='%s' alt='%s'>", $row["img"], $row["nombre"]);
@@ -29,7 +32,7 @@ if ($resultado = $mysqli->query($consulta)) {
             <div class="row">
                 <div class="col-12">
                     <?php
-                    printf("<div class='nombreFichaRapero'>%s</div>", $row["nombre"]);
+                    printf("<div class='nombreFichaRapero'>%s</div><div class='tipoFichaRapero'>%s</div>", $row["nombre"], $row["tipo"]);
                     ?>
                 </div>
                 <div class="col-12">
@@ -43,7 +46,7 @@ if ($resultado = $mysqli->query($consulta)) {
                     ?>
                 </div>
                 <div class="col-12">
-                    <form action="">
+                    <form action="#">
                         <button class="btnComprar">
                             comprar
                         </button>
@@ -57,7 +60,8 @@ if ($resultado = $mysqli->query($consulta)) {
             </div>
         </div>
     </div>
-
+    <br>
+    <div class="hr"></div>
 </div>
 <?php
 include "web/footer.php";

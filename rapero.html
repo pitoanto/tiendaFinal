@@ -9,8 +9,8 @@ if ($mysqli->connect_errno) {
     <div class="col miRapero">
         <?php
     printf("<img src=' %s' alt='%s'>
-    <div class='nombreRapero'>%s</div>
-    <div class='tipoRapero'>%s</div>", $row["img"], $row["nombre"], $row["nombre"], $row["tipo"]);
+    <div class='nombreRapero'>%s </div>
+    <div class='precioRapero'>%s€</div>", $row["img"], $row["nombre"], $row["nombre"], $row["precio"]);
     ?>
 
     </div>

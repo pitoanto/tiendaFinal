@@ -11,6 +11,15 @@ html {
     max-width: auto;
 }
 
+.hr {
+    background-color: var(--primer-color);
+    border: 1px solid var(--tercer-color);
+}
+
+.logo {
+    height: 2.2rem;
+}
+
 .container-fluid {
     text-align: center;
     font-family: Helvetica, sans-serif, monospace;
@@ -94,10 +103,12 @@ html {
     height: 2.5rem;
     border-radius: 10px 0px 0px 10px;
     padding-left: 1rem;
+    transition: 300ms;
 }
 
 .textBuscador:focus {
     outline: none;
+    height: 3rem;
 }
 
 .btnBuscador {
@@ -106,6 +117,7 @@ html {
     border-radius: 0px 10px 10px 0px;
     width: 5rem;
     background-color: var(--segundo-color);
+    text-transform: uppercase;
 }
 
 .divImagen {
@@ -122,8 +134,8 @@ html {
 }
 
 .imgCarousel {
-    opacity: 80%;
-    height: 45rem;
+    border-top: 5px solid var(--segundo-color);
+    border-bottom: 5px solid var(--segundo-color);
 }
 
 .servicios, .raperosFamosos {
@@ -170,7 +182,7 @@ html {
     padding: 1rem 0rem 0rem 0rem;
     font-family: 'Oswald', sans-serif;
     font-weight: 100;
-    font-size:4.8rem;
+    font-size: 4.8rem;
     width: 90%;
 }
 
@@ -273,10 +285,10 @@ html {
     font-size: xx-large;
 }
 
-
-.tipoRapero {
-    text-transform: capitalize;
-    font-size: medium;
+.precioRapero {
+    color: var(--tercer-color);
+    margin-bottom: .3rem;
+    font-size: 28px;
 }
 
 .fichaRaperoFondo {
@@ -288,6 +300,12 @@ html {
     color: var(--segundo-color);
     font-size: 32px;
     text-transform: uppercase;
+}
+
+.tituloTipoFichaRapero {
+    font-size: 22px;
+    background-color: var(--tercer-color);
+    padding: .4rem;
 }
 
 
@@ -306,7 +324,7 @@ html {
 .nombreFichaRapero {
     text-align: left;
     text-transform: uppercase;
-    font-size: xx-large;
+    font-size: 40px;
     color: var(--segundo-color);
     margin: 1rem 1rem;
 }
@@ -333,10 +351,19 @@ html {
 .precioFichaRapero {
     font-weight: bold;
     text-indent: 1rem;
-    text-align: left;
+    text-align: center;
     margin: 0rem 1rem 1rem 1rem;
     font-size: 36px;
     color: var(--tercer-color);
+}
+
+.tipoFichaRapero {
+    margin: 0rem 0rem 2rem 1rem;
+    color: var(--segundo-color);
+    text-transform: uppercase;
+    text-align: left;
+    color: var(--tercer-color);
+    letter-spacing: 3px;
 }
 
 .btnComprar {
@@ -354,4 +381,49 @@ html {
 
 .btnComprar:hover {
     background-color: var(--tercer-color-var);
+}
+
+.formularios {
+    padding: 5rem 0rem;
+    color: var(--segundo-color);
+    background-color: var(--primer-color);
+}
+
+.formularioIngreso, .formularioRegistro {
+    text-align: center;
+}
+
+.formularioIngreso {
+    padding-top: 1rem;
+}
+
+.textFormulario {
+    width: 80%;
+    padding: .8rem;
+    border: 1px solid var(--segundo-color-var);
+    margin: .3rem;
+    background-color: var(--primer-color);
+    transition: 300ms;
+    color: var(--segundo-color);
+}
+
+.textFormulario:focus {
+    outline: 1px solid var(--tercer-color);
+}
+
+.botonFormulario {
+    border: none;
+    width: 80%;
+    padding: 1rem;
+    margin-top: 1rem;
+    background-color: var(--tercer-color);
+    border-radius: 50px;
+    text-transform: uppercase;
+    color: var(--segundo-color);
+    font-size: large;
+}
+
+.botonFormulario:hover {
+    background-color: var(--tercer-color-var);
+    color: var(--primer-color);
 }
