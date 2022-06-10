@@ -26,6 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $registro = "INSERT INTO cuenta (user, email, pass, direccion, fecha_registro) VALUES ('$nombre', '$correo', '$pass', '$direccion', '$fecha')";
 
                     mysqli_query($mysqli, $registro);
+                    $_SESSION["log"] = true;
                     header('Location: ../index.php');
                 }
             };

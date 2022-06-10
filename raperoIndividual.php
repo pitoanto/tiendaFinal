@@ -5,14 +5,12 @@ if ($mysqli->connect_errno) {
     echo "Fallo al conectar a MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
 }
 $miRapero = $_GET["id"];
-
 $consulta = "SELECT * FROM rapero WHERE rapero.id = $miRapero";
 
 if ($resultado = $mysqli->query($consulta)) {
     $row = $resultado->fetch_assoc();
 }
 ?>
-
 <div class="container-fluid fichaRaperoFondo">
     <div class="row">
         <div class="col-12">
@@ -45,13 +43,11 @@ if ($resultado = $mysqli->query($consulta)) {
                     printf("<div class='precioFichaRapero'>%s€</div>", $row["precio"]);
                     ?>
                 </div>
-                <div class="col-12">
-                    <form action="#">
-                        <button class="btnComprar">
-                            comprar
-                        </button>
-                    </form>
-                </div>
+
+                <form class="col-12" action='' method="GET">
+                    <input type="submit" class="btnComprar" value="comprar">
+                </form>
+
                 <div class="col-12 ">
                     <?php
                     printf("<div class='fraseFichaRapero'><q>%s</q></div>", $row["frase"]);

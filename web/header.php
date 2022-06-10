@@ -1,5 +1,8 @@
 <?php
 session_start();
+if (isset($_SESSION["admin"]) && isset($_SESSION["id_user"])) {
+    var_dump("Admin: " . $_SESSION["admin"] . "  " . "ID: " . $_SESSION["id_user"]);
+}
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -46,3 +49,11 @@ session_start();
             </form>
         </div>
     </div>
+    <?php
+    if (isset($_SESSION["log"])) {
+        if (isset($_SESSION["admin"])) {
+            printf("<div class='btnAdmin'>Administrar sitio</div>");
+        }
+    }
+
+    ?>

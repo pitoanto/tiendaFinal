@@ -24,20 +24,60 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     if ($passBaseDatos = $mysqli->query($consultaPass)) {
                         $row = $passBaseDatos->fetch_assoc();
                         $passBaseDatos = $row["pass"];
-                        echo $passBaseDatos;
-                        echo $pass;
+
                         if ($pass == $passBaseDatos) {
                             $_SESSION["log"] = true;
-                            header('Location: ../index.php');
-                            if ($correo == "admin") {
-                                $_SESSION["admin"] = true;
+
+                            $consultaID = "SELECT id_user FROM cuenta WHERE email = '$correo'";
+                            if ($id_user = $mysqli->query($consultaID)) {
+                                $row = $id_user->fetch_assoc();
+                                $id_user = $row["id_user"];
+                                $_SESSION["id_user"] = $id_user;
+                            }
+
+                            $consultaAdmin = "SELECT email FROM cuenta WHERE email = '$correo' AND cuenta.admin = 1";
+
+                            header('Location: ../store.php');
+                            if ($correoAdminBaseDatos = $mysqli->query($consultaAdmin)) {
+                                $row = $correoAdminBaseDatos->fetch_assoc();
+                                $correoAdminBaseDatos = $row["email"];
+
+                                if ($correo == $correoAdminBaseDatos && $id_user == 11) {
+                                    $_SESSION["admin"] = true;
+                                    header('Location: ../store.php');
+                                }
+                            } else {
+
+                                header('Location: ../store.php');
                             }
                         } else {
+                            echo "ERROR 6";
+                            $correoLog = $_POST["correo"];
+                            $registroLog = "INSERT INTO log (fecha, email_intento, correcto) VALUES ('$fecha', '$correoLog', 0)";
+                            mysqli_query($mysqli, $registroLog);
                             header('Location: ../cuenta.php');
                         }
+                    } else {
+                        echo "ERROR 5";
+                        $correoLog = $_POST["correo"];
+                        $registroLog = "INSERT INTO log (fecha, email_intento, correcto) VALUES ('$fecha', '$correoLog', 0)";
+                        mysqli_query($mysqli, $registroLog);
+                        header('Location: ../cuenta.php');
                     }
+                } else {
+                    echo "ERROR 4";
+                    $correoLog = $_POST["correo"];
+                    $registroLog = "INSERT INTO log (fecha, email_intento, correcto) VALUES ('$fecha', '$correoLog', 0)";
+                    mysqli_query($mysqli, $registroLog);
+                    header('Location: ../cuenta.php');
                 }
-            };
+            } else {
+                echo "ERROR 3";
+                $correoLog = $_POST["correo"];
+                $registroLog = "INSERT INTO log (fecha, email_intento, correcto) VALUES ('$fecha', '$correoLog', 0)";
+                mysqli_query($mysqli, $registroLog);
+                header('Location: ../cuenta.php');
+            }
         } else {
             echo "ERROR 2";
         }

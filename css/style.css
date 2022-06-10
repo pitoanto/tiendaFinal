@@ -285,10 +285,17 @@ html {
     font-size: xx-large;
 }
 
-.precioRapero {
+.precioRapero, .precioRaperoOferta {
     color: var(--tercer-color);
     margin-bottom: .3rem;
     font-size: 28px;
+}
+
+.precioRaperoTachado {
+    color: var(--segundo-color);
+    margin-bottom: .3rem;
+    font-size: 20px;
+    text-decoration: line-through;
 }
 
 .fichaRaperoFondo {
@@ -426,4 +433,59 @@ html {
 .botonFormulario:hover {
     background-color: var(--tercer-color-var);
     color: var(--primer-color);
+}
+
+.btnAdmin {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    z-index: 50;
+}
+
+.carritoCompra {
+    color: var(--primer-color);
+    border-radius: 50px;
+    background-color: var(--segundo-color);
+    padding: 2rem;
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+    z-index: 20;
+}
+
+.pagCarritoCompra {
+    margin-top: 1rem;
+}
+
+.compraRapero {
+    align-items: center;
+    /* text-align: left; */
+    margin: 1rem 1rem;
+    background-color: var(--tercer-color);
+    height: auto;
+}
+
+.compraIMGRapero {
+    text-align: right;
+    margin: .8rem;
+    max-height: 12rem;
+    height: auto;
+}
+
+.compraInfoRapero {
+    text-align: center;
+    font-size: 26px;
+    text-transform: uppercase;
+}
+
+.contenedorbtnComprarBorrarRapero {
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+.btnComprarBorrarRapero {
+    background-color: transparent;
+    border: 1px solid var(--primer-color);
+    border-radius: 50px;
 }
