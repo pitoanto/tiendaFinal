@@ -114,7 +114,7 @@ session_start();
                 <p> ¿Primera vez en nuestra web? <br> Regístrate para obtener los mejores precios</p>
             </div>
 
-            <a href="#" class="col-12 col-md-6 divLinkRegistro">Regístrate</a>
+            <a href="cuenta.php" class="col-12 col-md-6 divLinkRegistro">Regístrate</a>
 
         </div>
     </div>
