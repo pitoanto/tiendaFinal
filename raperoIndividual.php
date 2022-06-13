@@ -44,9 +44,45 @@ if ($resultado = $mysqli->query($consulta)) {
                     ?>
                 </div>
 
-                <form class="col-12" action='' method="GET">
-                    <input type="submit" class="btnComprar" value="comprar">
-                </form>
+
+                <?php
+                if (isset($_SESSION["LOG"])) {
+                    var_dump($_SESSION["LOG"]);
+                    if ($_SESSION["LOG"] == true) {
+                        if (isset($_SESSION["enCarrito"])) {
+                            if ($_SESSION["enCarrito"] == true) {
+                                printf('<div class="col-12"><div class="enCarrito">
+                                Ya tienes a esta persona en el carrito
+                                </div></div>');
+                                $_SESSION["enCarrito"] = false;
+                            } else {
+                                if (isset($_SESSION["add"])) {
+                                    if ($_SESSION["add"] == true) {
+                                        printf('<div class="col-12"><div class="addRapero" style="display:none">
+                                        Persona añadida al carrito
+                                        </div></div>');
+                                    } else {
+                                        printf('<div class="col-12"><div style="display:none"> </div></div>');
+                                    }
+                                } else {
+                                    printf('<div class="col-12"><div style="display:none"> </div></div>');
+                                }
+                            }
+                        } else {
+                            printf('<div class="col-12"><div style="display:none"> </div></div>');
+                        }
+                    } else {
+                        printf('<div class="col-12"><div class="noLog">Debes estar registrad@ para poder comprar</div></div>');
+                    }
+                } else {
+                    printf('<div class="col-12"><div class="noLog">Debes estar registrad@ para poder comprar</div></div>');
+                }
+                ?>
+
+                <div class="col-12">
+                    <a href='web/productosCarrito.php?id=<?= $row["id"] ?>' class="btnComprar">Comprar</a>
+                </div>
+
 
                 <div class="col-12 ">
                     <?php
@@ -56,8 +92,16 @@ if ($resultado = $mysqli->query($consulta)) {
             </div>
         </div>
     </div>
-    <br>
-    <div class="hr"></div>
+    <div class="row filaFichaVideoRapero">
+        <div class="d-none d-sm-block col-sm-3"></div>
+        <?php
+        printf("<iframe class='col-12 col-sm-6 videoFichaRapero' src='%s' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>", $row['video']);
+        ?>
+        <div class="d-none d-sm-block col-sm-3"></div>
+
+    </div>
+</div>
+<div class="hr"></div>
 </div>
 <?php
 include "web/footer.php";

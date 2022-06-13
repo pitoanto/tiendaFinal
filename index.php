@@ -24,8 +24,8 @@ session_start();
             <a href="index.php" class="d-none d-md-block col-md-4 btnHeader">INICIO</a>
             <a href="store.php" class="col-6 col-md-4 btnHeader">TIENDA</a>
             <?php
-            if (isset($_SESSION["log"])) {
-                if ($_SESSION["log"] == true) {
+            if (isset($_SESSION["LOG"])) {
+                if ($_SESSION["LOG"] == true) {
                     printf('<a href="web/logout.php" class="col-3 col-md-2 btnHeader">SALIR</a>');
                 } else {
                     printf('<a href="cuenta.php" class="col-3 col-md-2 btnHeader">CUENTA</a>');

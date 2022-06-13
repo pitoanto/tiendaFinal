@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         $passBaseDatos = $row["pass"];
 
                         if ($pass == $passBaseDatos) {
-                            $_SESSION["log"] = true;
+                            $_SESSION["LOG"] = true;
 
                             $consultaID = "SELECT id_user FROM cuenta WHERE email = '$correo'";
                             if ($id_user = $mysqli->query($consultaID)) {
