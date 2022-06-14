@@ -75,7 +75,18 @@ session_start();
             <span class="visually-hidden">Next</span>
         </button>
     </div>
-
+    <?php
+    if (!isset($_SESSION["LOG"])) {
+        printf("<div class='container-fluid'>
+        <div class='row'>
+            <div class='col carritoRegistrar'>
+                <h3>Para ver los artículos del carrito, inicia sesión o regístrate</h3> <br>
+                <p>¡Además, tendrás grandes descuentos en muchos de nuestr@s raper@s!</p>
+            </div>
+        </div>");
+    }
+    ?>
+    </div>
     <div class="container-fluid">
         <div class="row raperosFamosos">
             <div class="col-12 raperosFamososTitulo">Descubre nuestros raperos mejor valorados</div>

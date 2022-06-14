@@ -1,7 +1,7 @@
 <div class="container-fluid miFooter">
     <div class="row">
         <div class="d-none d-sm-block col-sm-2"></div>
-        <a href="#" class="col-12 col-sm-2 linkFooter">CONTACTO</a>
+        <a href="contacto.php" class="col-12 col-sm-2 linkFooter">CONTACTO</a>
         <a href="#" class="col-12 col-sm-2 linkFooter">AYUDA</a>
         <a href="#" class="col-12 col-sm-2 linkFooter">FAQ'S</a>
         <a href="#" class="col-12 col-sm-2 linkFooter">SITE MAP</a>

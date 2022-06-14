@@ -3,19 +3,18 @@ $mysqli = new mysqli("localhost", "root", "", "raperos");
 if ($mysqli->connect_errno) {
     echo "Fallo al conectar a MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
 }
-
 ?>
 <a href='raperoIndividual.php?id=<?= $row["id"] ?>' class="col-12 col-sm-3 Rapero">
     <div class="col miRapero">
         <?php
-        if (isset($_SESSION["log"])) {
-            if ($_SESSION["log"]) {
+        if (isset($_SESSION["LOG"])) {
+            if ($_SESSION["LOG"]) {
                 printf("<img src='%s' alt='%s'><div class='nombreRapero'>%s</div>", $row["img"], $row["nombre"], $row["nombre"]);
 
                 if ($row["precio_oferta"] == "") {
                     printf("<div class='precioRapero'>%s€</div>", $row["precio"]);
                 } else {
-                    printf("<div class='precioRaperoOferta'>%s€</div><div class='precioRaperoTachado'>%s€</div>", $row["precio_oferta"], $row["precio"]);
+                    printf("<div class='precioRaperoOferta'>Oferta: %s€</div><div class='precioRaperoTachado'>%s€</div>", $row["precio_oferta"], $row["precio"]);
                 }
             } else {
                 printf("<img src='%s' alt='%s'><div class='nombreRapero'>%s</div><div class='precioRapero'>%s€</div>", $row["img"], $row["nombre"], $row["nombre"], $row["precio"]);

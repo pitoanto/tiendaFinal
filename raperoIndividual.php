@@ -40,6 +40,7 @@ if ($resultado = $mysqli->query($consulta)) {
                 </div>
                 <div class="col-12">
                     <?php
+
                     printf("<div class='precioFichaRapero'>%s€</div>", $row["precio"]);
                     ?>
                 </div>
@@ -80,7 +81,7 @@ if ($resultado = $mysqli->query($consulta)) {
                 ?>
 
                 <div class="col-12">
-                    <a href='web/productosCarrito.php?id=<?= $row["id"] ?>' class="btnComprar">Comprar</a>
+                    <a href='web/productosCarrito.php?id=<?= $row["id"] ?>' class="btnComprar">Añadir</a>
                 </div>
 
 

@@ -1,11 +1,23 @@
 <?php
 session_start();
+function validar($dato)
+{
+    $dato = trim($dato);
+    $dato = stripslashes($dato);
+    $dato = htmlspecialchars($dato);
+
+    return $dato;
+}
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST["correo"]) && isset($_POST["pass"])) {
         if (!empty($_POST["correo"]) && !empty($_POST["pass"])) {
             $correo = $_POST["correo"];
             $pass = $_POST["pass"];
             $fecha = date('m:d:Y G:i:s');
+
+            $correo = validar($correo);
+            $pass = validar($pass);
+
 
             $consultaCorreo = "SELECT email FROM cuenta WHERE email = '$correo'";
             $consultaPass = "SELECT pass FROM cuenta WHERE email = '$correo'";
@@ -27,7 +39,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                         if ($pass == $passBaseDatos) {
                             $_SESSION["LOG"] = true;
-
                             $consultaID = "SELECT id_user FROM cuenta WHERE email = '$correo'";
                             if ($id_user = $mysqli->query($consultaID)) {
                                 $row = $id_user->fetch_assoc();

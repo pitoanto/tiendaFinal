@@ -396,9 +396,9 @@ html {
     background-color: var(--tercer-color);
     border-radius: 50px;
     font-family: Helvetica, sans-serif, monospace;
-    text-transform: capitalize;
+    text-transform: uppercase;
     font-style: italic;
-    font-size: x-large;
+    font-size: large;
 }
 
 .btnComprar:hover {
@@ -485,6 +485,7 @@ html {
     margin: 1rem 1rem;
     background-color: var(--tercer-color);
     height: auto;
+    box-shadow: 0px 3px 6px 0px black;
 }
 
 .compraIMGRapero {
@@ -500,26 +501,37 @@ html {
     text-transform: uppercase;
 }
 
+.precioInfoRapero {
+    text-align: center;
+    font-size: x-large;
+    background-color: var(--segundo-color);
+    padding: .5rem 0rem;
+    border-radius: 50px;
+}
+
 .contenedorbtnComprarBorrarRapero {
     text-align: center;
     padding-bottom: 1rem;
 }
 
 .btnComprarBorrarRapero {
+    font-weight: bold;
     background-color: transparent;
-    border: 1px solid var(--primer-color);
+    border: 2px solid var(--primer-color-var);
     border-radius: 50px;
     padding: .5rem 1rem;
     color: var(--primer-color);
     text-decoration: none;
+
 }
 
 .btnComprarBorrarRapero:hover {
-    background-color: var(--primer-color);
+    background-color: var(--primer-color-var);
     color: var(--segundo-color);
 }
 
 .numArtCarrito {
+    font-weight: bold;
     position: absolute;
     text-decoration: none;
     bottom: 40px;
@@ -527,4 +539,80 @@ html {
     padding: 0rem .4rem;
     border-radius: 50px;
     background-color: var(--tercer-color);
+    box-shadow: 0px 2px 3px 0px var(--primer-color);
+}
+
+.totalPrecio {
+    font-weight: 600;
+    text-align: right;
+    background-color: var(--primer-color-var);
+    margin-bottom: 1rem;
+    padding: 1rem 1.5rem;
+    color: var(--segundo-color);
+    font-size: xx-large;
+}
+
+.contenedorBtnPagar {
+    font-weight: 600;
+    text-align: right;
+    background-color: var(--primer-color-var);
+    margin-bottom: 1rem;
+    padding: 1rem 1.5rem;
+    color: var(--segundo-color);
+    font-size: xx-large;
+}
+
+.btnPagar {
+    margin: auto;
+    font-weight: 400;
+    background-color: var(--tercer-color);
+    padding: .5rem 1rem;
+    color: var(--segundo-color);
+    font-size: x-large;
+    text-decoration: none;
+    border-radius: 50px;
+}
+
+.btnPagar:hover {
+    color: var(--primer-color);
+    background-color: var(--segundo-color);
+}
+
+.carritoRegistrar {
+    text-align: center;
+    font-size: x-large;
+    margin: 1rem;
+    color: red;
+
+}
+
+.formContacto {
+    background-color: var(--tercer-color);
+}
+
+.tituloFormulario {
+    font-size: x-large;
+    background-color: var(--primer-color-var);
+    color: var(--segundo-color);
+}
+
+.btnEnviarConsulta {
+    background-color: var(--segundo-color);
+    padding: .5rem 2rem;
+    margin-bottom: 1rem;
+    border: none;
+    color: var(--primer-color);
+    font-size: large;
+    font-weight: 500;
+}
+
+
+#alertaEnvioEmail {
+    position: absolute;
+    z-index: 50;
+    top: 30%;
+    left: 40%;
+    padding: 1rem;
+    background-color: var(--color-secundario);
+    display: none;
 }
