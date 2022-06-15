@@ -1,11 +1,8 @@
 <div class="container-fluid miFooter">
     <div class="row">
-        <div class="d-none d-sm-block col-sm-2"></div>
-        <a href="contacto.php" class="col-12 col-sm-2 linkFooter">CONTACTO</a>
-        <a href="#" class="col-12 col-sm-2 linkFooter">AYUDA</a>
-        <a href="#" class="col-12 col-sm-2 linkFooter">FAQ'S</a>
-        <a href="#" class="col-12 col-sm-2 linkFooter">SITE MAP</a>
-        <div class="d-none d-sm-block col-sm-2"></div>
+        <a href="contacto.php" class="col-12 col-sm-4 linkFooter">CONTACTO</a>
+        <a href="faqs.php" class="col-12 col-sm-4 linkFooter">FAQ'S</a>
+        <a href="map.php" class="col-12 col-sm-4 linkFooter">SITE MAP</a>
 
     </div>
     <div class="row">
@@ -49,8 +46,35 @@
 </div>
 
 <?php
-include "botonCarrito.html";
+$mysqli = new mysqli("localhost", "root", "", "raperos");
+if ($mysqli->connect_errno) {
+    echo "Fallo al conectar a MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
+}
+if (isset($_SESSION["LOG"])) {
+    if ($_SESSION["LOG"] == true) {
+        $idUsuario = $_SESSION["id_user"];
+        $comprobarCarrito = "SELECT * FROM carrito WHERE id_user = $idUsuario";
+        if ($carrito = $mysqli->query($comprobarCarrito)) {
+            $rowCarrito = mysqli_num_rows($carrito);
+        }
+    }
+}
+
 ?>
+
+<a href="carrito.php" class="carritoCompra">
+    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+    </svg>
+    <div class="numArtCarrito">
+        <?php if (isset($_SESSION["LOG"])) {
+            if ($_SESSION["LOG"] == true) {
+                echo $rowCarrito;
+            }
+        } ?>
+
+    </div>
+</a>
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>

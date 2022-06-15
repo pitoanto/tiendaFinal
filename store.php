@@ -6,7 +6,7 @@ if ($mysqli->connect_errno) {
 }
 ?>
 <div class="container-fluid">
-    <div class="row">
+    <div class="row fondoTienda">
 
         <?php
         $consulta = "SELECT * FROM rapero ORDER BY nombre";

@@ -50,7 +50,9 @@ html {
 }
 
 /* FIN DE SCROLLBAR */
-
+.fondoTienda {
+    background-color: var(--primer-color);
+}
 
 .btnHeader {
     text-decoration: none;
@@ -257,7 +259,7 @@ html {
     background-color: var(--primer-color);
     text-decoration: none;
     transition: 100ms;
-    border: 1px solid white;
+    border: .5rem solid var(--tercer-color);
     min-width: max-content;
 }
 
@@ -272,7 +274,7 @@ html {
 .miRapero>img {
     margin: 1rem 0rem;
     height: 280px;
-    padding: 1rem;
+    padding: 1px;
     background-color: var(--tercer-color);
 }
 
@@ -452,10 +454,22 @@ html {
 }
 
 .btnAdmin {
-    position: absolute;
-    bottom: 0px;
-    right: 0px;
+    background-color: var(--segundo-color);
+    padding: 2rem;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
     z-index: 50;
+    text-decoration: none;
+    color: var(--primer-color);
+    border-radius: 50px;
+    box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.642);
+}
+
+.btnAdmin:hover {
+    color: var(--segundo-color);
+    background-color: var(--tercer-color);
+
 }
 
 .carritoCompra {
@@ -544,8 +558,7 @@ html {
 
 .totalPrecio {
     font-weight: 600;
-    text-align: right;
-    background-color: var(--primer-color-var);
+    text-align: center;
     margin-bottom: 1rem;
     padding: 1rem 1.5rem;
     color: var(--segundo-color);
@@ -553,9 +566,9 @@ html {
 }
 
 .contenedorBtnPagar {
+    background-color: var(--primer-color);
     font-weight: 600;
-    text-align: right;
-    background-color: var(--primer-color-var);
+    text-align: center;
     margin-bottom: 1rem;
     padding: 1rem 1.5rem;
     color: var(--segundo-color);
@@ -566,7 +579,7 @@ html {
     margin: auto;
     font-weight: 400;
     background-color: var(--tercer-color);
-    padding: .5rem 1rem;
+    padding: 1rem 2rem;
     color: var(--segundo-color);
     font-size: x-large;
     text-decoration: none;
@@ -574,8 +587,8 @@ html {
 }
 
 .btnPagar:hover {
-    color: var(--primer-color);
-    background-color: var(--segundo-color);
+    color: var(--segundo-color);
+    background-color: var(--primer-color);
 }
 
 .carritoRegistrar {
@@ -606,7 +619,6 @@ html {
     font-weight: 500;
 }
 
-
 #alertaEnvioEmail {
     position: absolute;
     z-index: 50;
@@ -615,4 +627,31 @@ html {
     padding: 1rem;
     background-color: var(--color-secundario);
     display: none;
+}
+
+.bloqueInteresCompraFinalizada {
+    font-size: x-large;
+    text-align: center;
+    padding: .5rem 1rem 1rem 1rem;
+    background-color: var(--tercer-color);
+}
+
+.inputAddRapero {
+    margin: .2rem;
+    padding: .5rem;
+    width: 90%;
+    border: none;
+}
+
+.inputAddRapero:focus {
+    outline: none;
+}
+
+.btnAddRapero {
+    padding: .5rem;
+    width: 90%;
+    margin-bottom: 1rem;
+    border: none;
+    color: var(--segundo-color);
+    background-color: var(--primer-color);
 }

@@ -23,7 +23,7 @@ if ($resultado = $mysqli->query($consulta)) {
 
         <div class="col-12 col-md-4 fichaRapero">
             <?php
-            printf("<img src='%s' alt='%s'>", $row["img"], $row["nombre"]);
+            printf('<img src="img\rapero\%s.jpg" alt="%s">', $row['img'], $row['nombre']);
             ?>
         </div>
         <div class="col-12 col-md-8">
@@ -41,7 +41,12 @@ if ($resultado = $mysqli->query($consulta)) {
                 <div class="col-12">
                     <?php
 
-                    printf("<div class='precioFichaRapero'>%s€</div>", $row["precio"]);
+                    if ($row["precio_oferta"] == 0) {
+                        printf("<div class='precioRapero'>%s€</div>", $row["precio"]);
+                    } else {
+                        printf("<div class='precioRaperoOferta'>Oferta: %s€</div><div class='precioRaperoTachado'>%s€</div>", $row["precio_oferta"], $row["precio"]);
+                    }
+
                     ?>
                 </div>
 

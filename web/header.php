@@ -1,8 +1,5 @@
 <?php
 session_start();
-if (isset($_SESSION["admin"]) && isset($_SESSION["id_user"])) {
-    var_dump("Admin: " . $_SESSION["admin"] . "  " . "ID: " . $_SESSION["id_user"]);
-}
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -52,7 +49,7 @@ if (isset($_SESSION["admin"]) && isset($_SESSION["id_user"])) {
     <?php
     if (isset($_SESSION["LOG"])) {
         if (isset($_SESSION["admin"])) {
-            printf("<div class='btnAdmin'>Administrar sitio</div>");
+            printf("<a href='admin.php' class='btnAdmin'>Administrar</a>");
         }
     }
 
