@@ -1,5 +1,10 @@
 <?php
 session_start();
+if (isset($_SESSION["LOG"])) {
+    if (isset($_SESSION["admin"])) {
+        printf("<a href='admin.php' class='btnAdmin'>Administrar</a>");
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="es">
