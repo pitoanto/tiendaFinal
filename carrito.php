@@ -13,21 +13,21 @@ if ($mysqli->connect_errno) {
         $consulta = "SELECT * FROM rapero INNER JOIN carrito ON rapero.id = carrito.id_rapero INNER JOIN cuenta ON cuenta.id_user = carrito.id_user AND cuenta.id_user = $idUser";
         if ($resultado = $mysqli->query($consulta)) {
             while ($row = $resultado->fetch_assoc()) {
-                printf("
-            <div class='row compraRapero'>
+                printf('
+            <div class="row compraRapero">
 
-                <div class='col'>
-                 <img src='%s' alt='%s' class='compraIMGRapero'>
+                <div class="col">
+                 <img  src="img\rapero\%s.jpg" alt="%s" class="compraIMGRapero">
                  </div>
-                <div class='col compraInfoRapero'>
+                <div class="col compraInfoRapero">
                   <div>%s</div>
-                  <div class='precioInfoRapero'>%s€</div>
+                  <div class="precioInfoRapero">%s€</div>
                 </div>
 
-                <div class='col contenedorbtnComprarBorrarRapero'>
-                 <a href='web/borrarCarrito.php?id=%s' class='btnComprarBorrarRapero'>X</a>
+                <div class="col contenedorbtnComprarBorrarRapero">
+                 <a href="web/borrarCarrito.php?id=%s" class="btnComprarBorrarRapero">X</a>
                 </div>
-            </div>", $row["img"], $row["nombre"], $row["nombre"], $row["precio"], $row["id"]);
+            </div>', $row["img"], $row["nombre"], $row["nombre"], $row["precio"], $row["id"]);
             }
         };
         $id_user = $_SESSION["id_user"];
