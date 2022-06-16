@@ -9,7 +9,12 @@ if ($mysqli->connect_errno) {
     <div class="row fondoTienda">
 
         <?php
-        $consulta = "SELECT * FROM rapero ORDER BY nombre";
+        if (isset($resultado)) {
+            $consulta = $resultado;
+        } else {
+            $consulta = "SELECT * FROM rapero ORDER BY nombre";
+        }
+
         if ($resultado = $mysqli->query($consulta)) {
             while ($row = $resultado->fetch_assoc()) {
                 include "rapero.html";

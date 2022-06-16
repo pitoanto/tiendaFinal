@@ -1,3 +1,4 @@
+<div class="hr"></div>
 <div class="container-fluid miFooter">
     <div class="row">
         <a href="contacto.php" class="col-12 col-sm-4 linkFooter">CONTACTO</a>

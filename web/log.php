@@ -46,6 +46,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 $_SESSION["id_user"] = $id_user;
                             }
 
+                            $correoLog = $_POST["correo"];
+                            $registroLog = "INSERT INTO log (fecha, email_intento, correcto) VALUES ('$fecha', '$correoLog', 1)";
+                            mysqli_query($mysqli, $registroLog);
+
                             $consultaAdmin = "SELECT email FROM cuenta WHERE email = '$correo' AND cuenta.admin = 1";
 
                             header('Location: ../store.php');

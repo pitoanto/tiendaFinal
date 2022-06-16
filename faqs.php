@@ -4,7 +4,7 @@ include "web/header.php";
 <div class="container"><br>
     <div class="row">
         <div class="d-none d-sm-block col-sm-2"></div>
-        <div class="col-12 col-sm-8" style="background-color:rgb(152, 143, 42) ;"><br>
+        <div class="col-12 col-sm-8" style="background-color:#7D84B2;"><br>
             <h2>¿CON QUÉ DISPOSITIVO PUEDO UTILIZAR RAPPERBUY.COM?</h2>
             <p> Actualmente, puedes entrar con todo tipo de dispositivos, nuestra web está adaptada para todo tipo de pantallas.</p>
 

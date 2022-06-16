@@ -1,5 +1,32 @@
 <?php
 session_start();
+if (isset($_SESSION["LOG"])) {
+    if (isset($_SESSION["admin"])) {
+        printf("<a href='admin.php' class='btnAdmin'>Administrar</a>");
+    }
+}
+$mysqli = new mysqli("localhost", "root", "", "raperos");
+if ($mysqli->connect_errno) {
+    echo "Fallo al conectar a MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
+}
+
+if ($_SERVER["REQUEST_METHOD"] === "GET") {
+    if (isset($_GET["buscar"])) {
+        if ($_GET["buscar"] != "") {
+            $busqueda = $_GET["buscar"];
+            $cadena = "SELECT * FROM rapero WHERE ";
+            if ($busqueda) {
+                $trozos = explode(" ", $busqueda);
+                if (count($trozos) > 1) {
+                    echo "<script>alert('Error de búsqueda, utilice solo una palabra')</script>";
+                } else {
+                    $cadena .= "(nombre LIKE '%$busqueda%' OR tipo LIKE '%$busqueda%' OR frase LIKE '%$busqueda%' OR descripcion LIKE '%$busqueda%' OR precio LIKE '%$busqueda%' OR precio_oferta LIKE '%$busqueda%') ";
+                    $resultado = $cadena;
+                }
+            }
+        }
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -16,7 +43,7 @@ session_start();
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body style="background-color: #23231A;">
     <!-- HEADER -->
     <div class="container-fluid">
         <div class="row filaHeader">
@@ -38,7 +65,7 @@ session_start();
     </div>
     <div class="container-fluid contenedorBuscadorHeader">
         <div class="row buscadorHeader">
-            <form class="col buscarForm" action="web/buscador.php" method="GET">
+            <form class="col buscarForm" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="GET">
                 <input type="text" name="buscar" id="buscar" class="textBuscador" placeholder="Buscar en toda la tienda...">
                 <button type="submit" class="btnBuscador"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                         <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
@@ -46,11 +73,3 @@ session_start();
             </form>
         </div>
     </div>
-    <?php
-    if (isset($_SESSION["LOG"])) {
-        if (isset($_SESSION["admin"])) {
-            printf("<a href='admin.php' class='btnAdmin'>Administrar</a>");
-        }
-    }
-
-    ?>

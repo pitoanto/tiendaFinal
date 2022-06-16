@@ -21,6 +21,149 @@ if (isset($_SESSION["LOG"])) {
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap" rel="stylesheet">
     <title>RapperBuy</title>
 </head>
+<style>
+    body,
+    html {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        overflow-X: hidden;
+    }
+
+    #i1,
+    #i2,
+    #i3,
+    #i4,
+    #i5 {
+        display: none;
+    }
+
+    .carrusel {
+        margin: 0 auto;
+        position: relative;
+        width: 100%;
+        padding-bottom: 38%;
+        user-select: none;
+        background-color: #1c1c1c;
+    }
+
+    .carrusel .slide_img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+
+    .carrusel .slide_img img {
+        width: inherit;
+        height: inherit;
+    }
+
+    .prev,
+    .next {
+        width: 8%;
+        height: inherit;
+        position: absolute;
+        top: 0;
+        background-color: rgba(88, 88, 88, .2);
+        color: rgba(244, 244, 244, .9);
+        z-index: 99;
+        transition: .45s;
+        cursor: pointer;
+        text-align: center;
+    }
+
+    .next {
+        right: 0;
+    }
+
+    .prev {
+        left: 0;
+    }
+
+    label span {
+        position: absolute;
+        font-size: 100pt;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .prev:hover,
+    .next:hover {
+        transition: .3s;
+        background-color: rgba(88, 88, 89, .4);
+        color: #ffffff;
+    }
+
+    .carrusel #nav_slide {
+        width: 100%;
+        bottom: 12%;
+        height: 11px;
+        position: absolute;
+        text-align: center;
+        z-index: 99;
+        cursor: default;
+    }
+
+    .slide_img {
+        z-index: -1;
+    }
+
+    #i1:checked~#one,
+    #i2:checked~#two,
+    #i3:checked~#three,
+    #i4:checked~#four,
+    #i5:checked~#five {
+        z-index: 9;
+        animation: scroll .3s ease-out;
+    }
+
+    #i1:checked~#nav_slide,
+    #i2:checked~#nav_slide,
+    #i3:checked~#nav_slide,
+    #i4:checked~#nav_slide,
+    #i5:checked~#nav_slide {
+        background-color: rgba(255, 255, 255, .9);
+    }
+
+    @keyframes scroll {
+        0% {
+            opacity: .4;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @media screen and (max-width: 685px) {
+        .carrusel {
+            border: none;
+            width: 100%;
+            height: 0;
+            padding-bottom: 55%;
+        }
+
+        label span {
+            font-size: 50pt;
+        }
+
+        .prev,
+        .next {
+            width: 15%;
+        }
+
+        #nav_slide .dots {
+            width: 12px;
+            height: 12px;
+        }
+    }
+
+    @media screen and(min-width: 970px) {
+        .me {
+            display: none;
+        }
+    }
+</style>
 
 <body>
     <div class="container-fluid">
@@ -42,7 +185,59 @@ if (isset($_SESSION["LOG"])) {
         </div>
 
     </div>
-    <div id="carouselExampleCaptions" class="d-xl-block d-none carousel slide" data-bs-ride="false">
+    <div class="carrusel">
+
+        <input type="radio" id="i1" name="images" checked />
+        <input type="radio" id="i2" name="images" />
+        <input type="radio" id="i3" name="images" />
+        <input type="radio" id="i4" name="images" />
+        <input type="radio" id="i5" name="images" />
+
+        <div class="slide_img" id="one">
+
+            <img src="img/fondoWeb1.jpg">
+
+            <label class="prev" for="i5"><span>&#x2039;</span></label>
+            <label class="next" for="i2"><span>&#x203a;</span></label>
+
+        </div>
+
+        <div class="slide_img" id="two">
+
+            <img src="img/fondoWeb2.jpg">
+
+            <label class="prev" for="i1"><span>&#x2039;</span></label>
+            <label class="next" for="i3"><span>&#x203a;</span></label>
+
+        </div>
+
+        <div class="slide_img" id="three">
+            <img src="img/fondoWeb3.jpg">
+
+            <label class="prev" for="i2"><span>&#x2039;</span></label>
+            <label class="next" for="i4"><span>&#x203a;</span></label>
+        </div>
+
+        <div class="slide_img" id="four">
+            <img src="img/fondoWeb4.jpg">
+
+            <label class="prev" for="i3"><span>&#x2039;</span></label>
+            <label class="next" for="i5"><span>&#x203a;</span></label>
+        </div>
+
+        <div class="slide_img" id="five">
+            <img src="img/fondoWeb5.jpg">
+
+            <label class="prev" for="i4"><span>&#x2039;</span></label>
+            <label class="next" for="i1"><span>&#x203a;</span></label>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- <div id="carouselExampleCaptions" class="d-xl-block d-none carousel slide" data-bs-ride="false">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -79,7 +274,7 @@ if (isset($_SESSION["LOG"])) {
             <span class="btnSlider carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>
-    </div>
+    </div> -->
     <?php
     if (!isset($_SESSION["LOG"])) {
         printf("<div class='container-fluid'>

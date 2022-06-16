@@ -6,30 +6,12 @@ if ($mysqli->connect_errno) {
 }
 ?>
 
-<div class="container pagCarritoCompra">
+<div class="container-fluid pagCarritoCompra">
     <?php
     if (isset($_SESSION["id_user"])) {
         $idUser = $_SESSION["id_user"];
         $consulta = "SELECT * FROM rapero INNER JOIN carrito ON rapero.id = carrito.id_rapero INNER JOIN cuenta ON cuenta.id_user = carrito.id_user AND cuenta.id_user = $idUser";
-        if ($resultado = $mysqli->query($consulta)) {
-            while ($row = $resultado->fetch_assoc()) {
-                printf('
-            <div class="row compraRapero">
 
-                <div class="col">
-                 <img  src="img\rapero\%s.jpg" alt="%s" class="compraIMGRapero">
-                 </div>
-                <div class="col compraInfoRapero">
-                  <div>%s</div>
-                  <div class="precioInfoRapero">%s€</div>
-                </div>
-
-                <div class="col contenedorbtnComprarBorrarRapero">
-                 <a href="web/borrarCarrito.php?id=%s" class="btnComprarBorrarRapero">X</a>
-                </div>
-            </div>', $row["img"], $row["nombre"], $row["nombre"], $row["precio"], $row["id"]);
-            }
-        };
         $id_user = $_SESSION["id_user"];
 
         $precioOfertaBD = "SELECT SUM(precio_oferta) FROM rapero INNER JOIN carrito ON rapero.id = carrito.id_rapero INNER JOIN cuenta ON cuenta.id_user = carrito.id_user WHERE rapero.precio_oferta != '' AND cuenta.id_user = '$id_user'";
@@ -45,14 +27,65 @@ if ($mysqli->connect_errno) {
             $precioNormal = $row["SUM(precio)"];
         }
         $total = $precioNormal + $precioOferta;
-        printf("<div class='row contenedorBtnPagar'>
-    <div class='col-12 totalPrecio'>TOTAL: $total €</div>
-        <div class='col-12 contenedorBtnPagar'>
-            <a href='compraFinalizada.php' class='btnPagar'>FINALIZAR COMPRA</a>
-</div>
-</div>");
+
+
+
+        if ($resultado = $mysqli->query($consulta)) {
+            while ($row = $resultado->fetch_assoc()) {
+                if ($row["precio_oferta"] == 0) {
+                    printf(
+                        '<div class="row compraRapero">
+                                <div class="col-12 col-md-4">
+                                    <img src="img\rapero\%s.jpg" alt="%s" class="compraIMGRapero">
+                                </div>
+                                <div class="col-12 col-md-5 compraInfoRapero">
+                                    <div>%s</div>
+                                    <div class="col-12 precioInfoRapero">%s€</div>
+                                </div>
+                                <div class="col-12 col-md-2 contenedorbtnComprarBorrarRapero">
+                                    <a href="web/borrarCarrito.php?id=%s" class="btnComprarBorrarRapero">Eliminar</a>
+                                </div>
+                            </div>',
+                        $row["img"],
+                        $row["nombre"],
+                        $row["nombre"],
+                        $row["precio"],
+                        $row["id"]
+                    );
+                } else {
+                    printf(
+                        '<div class="row compraRapero">
+                                <div class="col-12 col-md-4">
+                                    <img src="img\rapero\%s.jpg" alt="%s" class="compraIMGRapero">
+                                </div>
+                                <div class="col-12 col-md-5 compraInfoRapero">
+                                    <div>%s</div>
+                                <div class="col-12 precioRaperoTachado">%s€</div>
+                                <div class="col-12 precioInfoRapero">%s€</div>
+                                </div>
+                                <div class="col-12 col-md-2 contenedorbtnComprarBorrarRapero">
+                                    <a href="web/borrarCarrito.php?id=%s" class="btnComprarBorrarRapero">Eliminar</a>
+                                </div>
+                            </div>',
+                        $row["img"],
+                        $row["nombre"],
+                        $row["nombre"],
+                        $row["precio"],
+                        $row["precio_oferta"],
+                        $row["id"]
+                    );
+                }
+            }
+        }
+
+
+        if ($total != 0) {
+            printf("<div class='row contenedorBtnPagar'><div class='col-12 totalPrecio'>TOTAL: $total €</div><div class='col-12 contenedorBtnPagar'><a href='compraFinalizada.php' class='btnPagar'>FINALIZAR COMPRA</a></div></div>");
+        } else {
+            printf("<div class='row contenedorBtnPagar'><div class='col-12 totalPrecio'>¡Aún no tienes productos en el carrito!</div></div>");
+        }
     } else {
-        printf("<div class='row'><div class='col-12 carritoRegistrar'><h3>Para ver los artículos del carrito, inicia sesión o regístrate</h3> <br> <p>¡Además, tendrás grandes descuentos en muchos de nuestr@s raper@s!</p></div></div>");
+        printf("<div class='row contenedorBtnPagar'><div class='col-12 totalPrecio'>Debes estar registrado para poder comprar</div><a href='cuenta.php' class='col-12 noLog'>Regístrate</a></div>");
     }
     ?>
 </div>

@@ -32,12 +32,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if ($correoBaseDatos = $mysqli->query($consultaCorreo)) {
                 $row = $correoBaseDatos->fetch_assoc();
                 $correoBaseDatos = $row["email"];
+
                 if ($correo == $correoBaseDatos) {
                     echo "El email ya existe";
+
+                    $correoLog = $_POST["correo"];
+                    $registroLog = "INSERT INTO log (fecha, email_intento, correcto) VALUES ('$fecha', '$correoLog', 0)";
+                    mysqli_query($mysqli, $registroLog);
                 } else {
                     $registro = "INSERT INTO cuenta (user, email, pass, direccion, fecha_registro) VALUES ('$nombre', '$correo', '$pass', '$direccion', '$fecha')";
                     mysqli_query($mysqli, $registro);
                     $_SESSION["LOG"] = true;
+
+                    $correoLog = $_POST["correo"];
+                    $registroLog = "INSERT INTO log (fecha, email_intento, correcto) VALUES ('$fecha', '$correoLog', 1)";
+                    mysqli_query($mysqli, $registroLog);
 
                     $consultaID = "SELECT id_user FROM cuenta WHERE email = '$correo'";
                     if ($id_user = $mysqli->query($consultaID)) {

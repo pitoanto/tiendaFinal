@@ -17,10 +17,10 @@ if ($mysqli->connect_errno) {
                     printf("<div class='precioRaperoOferta'>Oferta: %s€</div><div class='precioRaperoTachado'>%s€</div>", $row["precio_oferta"], $row["precio"]);
                 }
             } else {
-                printf("<img src='img\rapero\%s.jpg' alt='%s'><div class='nombreRapero'>%s</div><div class='precioRapero'>%s€</div>", $row["img"], $row["nombre"], $row["nombre"], $row["precio"]);
+                printf('<img src="img\rapero\%s.jpg" alt="%s"><div class="nombreRapero">%s</div><div class="precioRapero">%s€</div>', $row["img"], $row["nombre"], $row["nombre"], $row["precio"]);
             }
         } else {
-            printf("<img src='%s' alt='%s'><div class='nombreRapero'>%s</div><div class='precioRapero'>%s€</div>", $row["img"], $row["nombre"], $row["nombre"], $row["precio"]);
+            printf('<img src="img\rapero\%s.jpg" alt="%s"><div class="nombreRapero">%s</div><div class="precioRapero">%s€</div>', $row["img"], $row["nombre"], $row["nombre"], $row["precio"]);
         }
         ?>
 

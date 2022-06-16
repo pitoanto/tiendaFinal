@@ -8,7 +8,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         $_SESSION["LOG"] = true;
 
         if (isset($_GET["id"]) && !is_null($_GET["id"])) {
-            // var_dump("ID: " . $_GET["id"] . " ID_USER: " . $_SESSION["id_user"]);
             $mysqli = new mysqli("localhost", "root", "", "raperos");
             if ($mysqli->connect_errno) {
                 echo "Fallo al conectar a MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;

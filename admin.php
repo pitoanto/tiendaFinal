@@ -57,22 +57,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <div class="container"><br>
     <div class="row">
-        <div class="col-2"></div>
+        <div class="d-none d-sm-block col-sm-2"></div>
 
-        <form class="col-8" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST" style="text-align: center; background-color:rgb(152, 143, 42)"><br>
-
+        <form class="col-12 col-sm-8" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST" style="text-align: center; background-color:#7D84B2"><br>
+            <h3>Insertar rapero</h3>
             <input class="inputAddRapero" type="text" name="nombre" id="nombre" placeholder="Nombre"> <br>
             <input class="inputAddRapero" type="text" name="tipo" id="tipo" placeholder="Tipo de raper@"><br>
             <input class="inputAddRapero" type="text" name="descripcion" id="descripcion" placeholder="Descripcion"><br>
             <input class="inputAddRapero" type="text" name="frase" id="frase" placeholder="Frase"><br>
-            <input class="inputAddRapero" type="text" name="img" id="img" placeholder="Link a la imagen"><br>
+            <input class="inputAddRapero" type="text" name="img" id="img" placeholder="Nombre del archivo sin ''.jpg''"><br>
             <input class="inputAddRapero" type="text" name="video" id="video" placeholder="Link al vídeo"><br>
             <input class="inputAddRapero" type="number" name="precio" id="precio" placeholder="Precio"><br>
             <input class="inputAddRapero" type="number" name="precioOferta" id="precioOferta" placeholder="Precio en oferta"><br>
             <hr>
             <input class="btnAddRapero" type="submit" value="Insertar"><br>
         </form>
-        <div class="col-2"></div>
+        <div class="d-none d-sm-block col-sm-2"></div>
     </div><br>
 </div>
 <?php
