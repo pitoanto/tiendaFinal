@@ -2,7 +2,7 @@
     --primer-color: #23231A;
     --primer-color-var: #23231ac8;
     --segundo-color: #F6F8FF;
-    --segundo-color-var: #ffffff21;
+    --segundo-color-var: #ffffff86;
     --tercer-color: #7D84B2;
     --tercer-color-var: #6f7dd5;
 }
@@ -520,10 +520,12 @@ html {
 }
 
 .compraIMGRapero {
+
+    border: 5px solid var(--segundo-color-var);
     text-align: right;
     margin: .8rem;
     max-height: 12rem;
-    height: auto;
+    height: 8rem;
 }
 
 .compraInfoRapero {

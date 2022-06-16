@@ -35,14 +35,14 @@ if ($mysqli->connect_errno) {
                 if ($row["precio_oferta"] == 0) {
                     printf(
                         '<div class="row compraRapero">
-                                <div class="col-12 col-md-4">
+                                <div class="col-12 col-sm-3">
                                     <img src="img\rapero\%s.jpg" alt="%s" class="compraIMGRapero">
                                 </div>
-                                <div class="col-12 col-md-5 compraInfoRapero">
+                                <div class="col-12 col-sm-6 compraInfoRapero">
                                     <div>%s</div>
                                     <div class="col-12 precioInfoRapero">%s€</div>
                                 </div>
-                                <div class="col-12 col-md-2 contenedorbtnComprarBorrarRapero">
+                                <div class="col-12 col-sm-2 contenedorbtnComprarBorrarRapero">
                                     <a href="web/borrarCarrito.php?id=%s" class="btnComprarBorrarRapero">Eliminar</a>
                                 </div>
                             </div>',
@@ -80,7 +80,7 @@ if ($mysqli->connect_errno) {
 
 
         if ($total != 0) {
-            printf("<div class='row contenedorBtnPagar'><div class='col-12 totalPrecio'>TOTAL: $total €</div><div class='col-12 contenedorBtnPagar'><a href='compraFinalizada.php' class='btnPagar'>FINALIZAR COMPRA</a></div></div>");
+            printf("<div class='row contenedorBtnPagar'><div class='col-12 totalPrecio'>TOTAL: $total €</div><div class='col-12 contenedorBtnPagar'><a href='compraFinalizada.php' class='btnPagar'>PAGAR</a></div></div>");
         } else {
             printf("<div class='row contenedorBtnPagar'><div class='col-12 totalPrecio'>¡Aún no tienes productos en el carrito!</div></div>");
         }
