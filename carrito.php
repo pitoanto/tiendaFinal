@@ -55,23 +55,23 @@ if ($mysqli->connect_errno) {
                 } else {
                     printf(
                         '<div class="row compraRapero">
-                                <div class="col-12 col-md-4">
-                                    <img src="img\rapero\%s.jpg" alt="%s" class="compraIMGRapero">
-                                </div>
-                                <div class="col-12 col-md-5 compraInfoRapero">
-                                    <div>%s</div>
-                                <div class="col-12 precioRaperoTachado">%s€</div>
-                                <div class="col-12 precioInfoRapero">%s€</div>
-                                </div>
-                                <div class="col-12 col-md-2 contenedorbtnComprarBorrarRapero">
-                                    <a href="web/borrarCarrito.php?id=%s" class="btnComprarBorrarRapero">Eliminar</a>
-                                </div>
-                            </div>',
+                            <div class="col-12 col-sm-3">
+                                <img src="img\rapero\%s.jpg" alt="%s" class="compraIMGRapero">
+                            </div>
+                            <div class="col-12 col-sm-6 compraInfoRapero">
+                                <div>%s</div>
+                                <div class="col-12 precioInfoRaperoOferta">%s€</div>
+                                <div class="col-12 precioInfoRaperoTachado">%s€</div>
+                            </div>
+                            <div class="col-12 col-sm-2 contenedorbtnComprarBorrarRapero">
+                                <a href="web/borrarCarrito.php?id=%s" class="btnComprarBorrarRapero">Eliminar</a>
+                            </div>
+                        </div>',
                         $row["img"],
                         $row["nombre"],
                         $row["nombre"],
-                        $row["precio"],
                         $row["precio_oferta"],
+                        $row["precio"],
                         $row["id"]
                     );
                 }

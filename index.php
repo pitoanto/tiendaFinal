@@ -232,55 +232,15 @@ if (isset($_SESSION["LOG"])) {
             <label class="next" for="i1"><span>&#x203a;</span></label>
 
         </div>
-
-
     </div>
 
 
-    <!-- <div id="carouselExampleCaptions" class="d-xl-block d-none carousel slide" data-bs-ride="false">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="img/fondoWeb1.jpg" class="imgCarousel d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                    <h1>Blon y SweetPain</h1>
-                    <h4>Su encuentro tuvo lugar en la RedBull 2019</h4>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="img/fondoWeb2.jpg" class="imgCarousel d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                    <h1>Mnak y Skone</h1>
-                    <h4>Mnak y Skone batallando durante la FMS España</h4>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="img/fondoWeb3.jpg" class="imgCarousel d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                    <h1>Arkano y Dtoke</h1>
-                    <h4>Arkano rapeando contra Dtoke en la RedBull 2015</h4>
-                </div>
-            </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-            <span class="btnSlider carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-    </div> -->
     <?php
     if (!isset($_SESSION["LOG"])) {
         printf("<div class='container-fluid'>
         <div class='row'>
             <div class='col carritoRegistrar'>
-                <h3>Para ver los artículos del carrito, inicia sesión o regístrate</h3> <br>
+                Para ver los artículos del carrito, inicia sesión o regístrate <br>
                 <p>¡Además, tendrás grandes descuentos en muchos de nuestr@s raper@s!</p>
             </div>
         </div>");

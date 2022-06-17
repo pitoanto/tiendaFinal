@@ -21,7 +21,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             if ($id_user_carrito = $mysqli->query($comprobarCarritoUsuario)) {
                 $rowUser = $id_user_carrito->fetch_assoc();
                 $id_user_carrito = $rowUser["id_user"];
-                // var_dump("ID Usuario: " . $id_user_carrito);
 
                 $comprobarCarritoRapero = "SELECT id_rapero FROM carrito WHERE id_rapero = '$idRapero'";
                 if ($id_rapero_carrito = $mysqli->query($comprobarCarritoRapero)) {
@@ -43,7 +42,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                     } else {
                         header("Location: ../raperoIndividual.php?id=$idRapero");
                     }
+                } else {
+                    header("Location: ../raperoIndividual.php?id=$idRapero");
                 }
+            } else {
+                header("Location: ../raperoIndividual.php?id=$idRapero");
             }
         } else {
             header("Location: ../raperoIndividual.php?id=$idRapero");
@@ -51,4 +54,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     } else {
         header("Location: ../raperoIndividual.php?id=$idRapero");
     }
+} else {
+    header("Location: ../raperoIndividual.php?id=$idRapero");
 }

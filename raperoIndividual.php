@@ -40,12 +40,20 @@ if ($resultado = $mysqli->query($consulta)) {
                 </div>
                 <div class="col-12">
                     <?php
-
-                    if ($row["precio_oferta"] == 0) {
-                        printf("<div class='precioRapero'>%s€</div>", $row["precio"]);
+                    if (isset($_SESSION["LOG"])) {
+                        if ($_SESSION["LOG"] == true) {
+                            if ($row["precio_oferta"] == 0) {
+                                printf("<div class='precioRapero'>%s€</div>", $row["precio"]);
+                            } else {
+                                printf("<div class='precioRaperoOferta'>Oferta: %s€</div><div class='precioRaperoTachado'>%s€</div>", $row["precio_oferta"], $row["precio"]);
+                            }
+                        } else {
+                            printf("<div class='precioRapero'>%s€</div>", $row["precio"]);
+                        }
                     } else {
-                        printf("<div class='precioRaperoOferta'>Oferta: %s€</div><div class='precioRaperoTachado'>%s€</div>", $row["precio_oferta"], $row["precio"]);
+                        printf("<div class='precioRapero'>%s€</div>", $row["precio"]);
                     }
+
 
                     ?>
                 </div>
@@ -53,7 +61,6 @@ if ($resultado = $mysqli->query($consulta)) {
 
                 <?php
                 if (isset($_SESSION["LOG"])) {
-                    var_dump($_SESSION["LOG"]);
                     if ($_SESSION["LOG"] == true) {
                         if (isset($_SESSION["enCarrito"])) {
                             if ($_SESSION["enCarrito"] == true) {
@@ -78,10 +85,10 @@ if ($resultado = $mysqli->query($consulta)) {
                             printf('<div class="col-12"><div style="display:none"> </div></div>');
                         }
                     } else {
-                        printf('<div class="col-12"><div class="noLog">Debes estar registrad@ para poder comprar</div></div>');
+                        printf('<div class="col-12"><div ><a href="cuenta.php"class="noLog">Debes estar registrad@ para poder comprar</div></div>');
                     }
                 } else {
-                    printf('<div class="col-12"><div class="noLog">Debes estar registrad@ para poder comprar</div></div>');
+                    printf('<div class="col-12"><div ><a href="cuenta.php"class="noLog">Debes estar registrad@ para poder comprar</div></div>');
                 }
                 ?>
 

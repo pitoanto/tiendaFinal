@@ -32,7 +32,7 @@ html {
 /* Firefox */
 * {
     scrollbar-width: thin;
-    scrollbar-color: #988f2a #e8e8e8;
+    scrollbar-color: #7D84B2 #e8e8e8;
 }
 
 /* Chrome, Edge, and Safari */
@@ -45,9 +45,8 @@ html {
 }
 
 *::-webkit-scrollbar-thumb {
-    background-color: #988f2a;
+    background-color: #7D84B2;
     border-radius: 12px;
-    border: 1px solid var(--segundo-color);
 }
 
 /* FIN DE SCROLLBAR */
@@ -298,12 +297,12 @@ html {
 .precioRapero, .precioRaperoOferta {
     color: var(--tercer-color);
     margin-bottom: .3rem;
-    font-size: 28px;
+    font-size: 38px;
 }
 
 .precioRaperoTachado {
     color: var(--segundo-color);
-    margin-bottom: .3rem;
+    padding-bottom: 1rem;
     font-size: 20px;
     text-decoration: line-through;
 }
@@ -536,10 +535,21 @@ html {
 }
 
 .precioInfoRapero {
-
     text-align: center;
-    font-size: x-large;
+    font-size: xx-large;
     padding: .5rem 0rem;
+    margin-bottom: 1rem;
+}
+
+.precioInfoRaperoOferta {
+    text-align: center;
+    font-size: xx-large;
+}
+
+.precioInfoRaperoTachado {
+    text-align: center;
+    font-size: medium;
+    text-decoration: line-through;
     margin-bottom: 1rem;
 }
 
@@ -616,9 +626,10 @@ html {
 .carritoRegistrar {
     text-align: center;
     font-size: x-large;
-    margin: 1rem;
-    color: red;
-
+    padding: 1rem;
+    color: white;
+    background-color: var(--primer-color);
+    text-shadow: 0px 0px 10px red;
 }
 
 .formContacto {
