@@ -8,6 +8,20 @@ function validar($dato)
 
     return $dato;
 }
+function login()
+{
+    $correoLog = $_POST["correo"];
+    $fecha = date('m:d:Y G:i:s');
+    $registroLog = "INSERT INTO log (fecha, email_intento, correcto) VALUES ('$fecha', '$correoLog', 0)";
+    $mysqli = new mysqli("localhost", "root", "", "raperos");
+    if ($mysqli->connect_errno) {
+        echo "Fallo al conectar a MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
+    }
+    mysqli_query($mysqli, $registroLog);
+    mysqli_close($mysqli);
+
+    header('Location: ../cuenta.php');
+}
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST["correo"]) && isset($_POST["pass"])) {
         if (!empty($_POST["correo"]) && !empty($_POST["pass"])) {
@@ -37,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         $row = $passBaseDatos->fetch_assoc();
                         $passBaseDatos = $row["pass"];
 
-                        if ($pass == $passBaseDatos) {
+                        if (password_verify($pass, $passBaseDatos)) {
                             $_SESSION["LOG"] = true;
                             $consultaID = "SELECT id_user FROM cuenta WHERE email = '$correo'";
                             if ($id_user = $mysqli->query($consultaID)) {
@@ -59,46 +73,38 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                                 if ($correo == $correoAdminBaseDatos && $id_user == 11) {
                                     $_SESSION["admin"] = true;
+                                    mysqli_close($mysqli);
+
                                     header('Location: ../store.php');
                                 }
                             } else {
-
                                 header('Location: ../store.php');
                             }
                         } else {
                             echo "ERROR 6";
-                            $correoLog = $_POST["correo"];
-                            $registroLog = "INSERT INTO log (fecha, email_intento, correcto) VALUES ('$fecha', '$correoLog', 0)";
-                            mysqli_query($mysqli, $registroLog);
-                            header('Location: ../cuenta.php');
+                            login();
                         }
                     } else {
                         echo "ERROR 5";
-                        $correoLog = $_POST["correo"];
-                        $registroLog = "INSERT INTO log (fecha, email_intento, correcto) VALUES ('$fecha', '$correoLog', 0)";
-                        mysqli_query($mysqli, $registroLog);
-                        header('Location: ../cuenta.php');
+                        login();
                     }
                 } else {
                     echo "ERROR 4";
-                    $correoLog = $_POST["correo"];
-                    $registroLog = "INSERT INTO log (fecha, email_intento, correcto) VALUES ('$fecha', '$correoLog', 0)";
-                    mysqli_query($mysqli, $registroLog);
-                    header('Location: ../cuenta.php');
+                    login();
                 }
             } else {
                 echo "ERROR 3";
-                $correoLog = $_POST["correo"];
-                $registroLog = "INSERT INTO log (fecha, email_intento, correcto) VALUES ('$fecha', '$correoLog', 0)";
-                mysqli_query($mysqli, $registroLog);
-                header('Location: ../cuenta.php');
+                login();
             }
         } else {
             echo "ERROR 2";
+            login();
         }
     } else {
         echo "ERROR 1";
+        login();
     }
 } else {
     echo "ERROR 0";
+    login();
 }

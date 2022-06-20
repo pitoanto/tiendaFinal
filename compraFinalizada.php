@@ -4,7 +4,7 @@ include "web/header.php";
 
 <div class="container">
     <div class="row">
-        <div class="col-12" style="text-align:center; margin:2rem 0rem;background-color: rgb(152, 143, 42);">
+        <div class="col-12" style="text-align:center; margin:2rem 0rem;background-color: #7D84B2;">
             <h1 style="margin: .5rem">¡Gracias por utilizar nuestros servicios!</h1>
             <h3 style="margin:.5rem">¡No olvides, pasarte por nuestra sección de <a href="contacto.php" style="color: #F6F8FF; text-decoration:none;">contacto</a> si te surge alguna duda!</h3>
             <p>Te redigiremos a nuestra página principal en 5 segundos, si quieres ir ya, <a href="index.php" style="color: #F6F8FF; text-decoration:none;">pulsa aquí</a></p>

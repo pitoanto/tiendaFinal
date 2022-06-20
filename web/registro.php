@@ -20,6 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $nombre = validar($nombre);
             $correo = validar($correo);
             $pass = validar($pass);
+            $password = password_hash($pass, PASSWORD_DEFAULT);
             $direccion = validar($direccion);
 
             $consultaCorreo = "SELECT email FROM cuenta WHERE email = '$correo'";
@@ -34,13 +35,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $correoBaseDatos = $row["email"];
 
                 if ($correo == $correoBaseDatos) {
-                    echo "El email ya existe";
-
                     $correoLog = $_POST["correo"];
                     $registroLog = "INSERT INTO log (fecha, email_intento, correcto) VALUES ('$fecha', '$correoLog', 0)";
                     mysqli_query($mysqli, $registroLog);
+                    mysqli_close($mysqli);
+                    header('Location: ../cuenta.php');
                 } else {
-                    $registro = "INSERT INTO cuenta (user, email, pass, direccion, fecha_registro) VALUES ('$nombre', '$correo', '$pass', '$direccion', '$fecha')";
+                    $registro = "INSERT INTO cuenta (user, email, pass, direccion, fecha_registro) VALUES ('$nombre', '$correo', '$password', '$direccion', '$fecha')";
                     mysqli_query($mysqli, $registro);
                     $_SESSION["LOG"] = true;
 
@@ -53,16 +54,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         $row = $id_user->fetch_assoc();
                         $id_user = $row["id_user"];
                         $_SESSION["id_user"] = $id_user;
+                        mysqli_close($mysqli);
                     }
+                    mysqli_close($mysqli);
                     header('Location: ../index.php');
                 }
             };
         } else {
-            echo "ERROR 2";
+            // echo "ERROR 2";
+            mysqli_close($mysqli);
+            header('Location: ../cuenta.php');
         }
     } else {
-        echo "ERROR 1";
+        // echo "ERROR 1";
+        header('Location: ../cuenta.php');
     }
 } else {
-    echo "ERROR 0";
+    // echo "ERROR 0";
+    header('Location: ../cuenta.php');
 }

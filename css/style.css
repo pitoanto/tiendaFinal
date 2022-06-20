@@ -220,7 +220,7 @@ html {
 }
 
 .divLinkRegistro:hover {
-    color: #988f2a;
+    color: var(--tercer-color);
     background-color: var(--primer-color);
 }
 
@@ -528,7 +528,6 @@ html {
 }
 
 .compraInfoRapero {
-
     text-align: center;
     font-size: 26px;
     text-transform: uppercase;
@@ -544,6 +543,7 @@ html {
 .precioInfoRaperoOferta {
     text-align: center;
     font-size: xx-large;
+    color: white;
 }
 
 .precioInfoRaperoTachado {

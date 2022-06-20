@@ -289,7 +289,6 @@ if (isset($_SESSION["LOG"])) {
 
         </div>
     </div>
-
     <?php
     include "web/footer.php";
     ?>
