@@ -77,7 +77,7 @@ include "web/header.php";
             <!-- <input type="submit" value="Registrarme" class="botonFormulario"> -->
             <button class="botonFormulario" onclick="validarRegistro()">Registrarse</button>
 
-            <div id="mensajeErrorRegistro" style="margin:1rem;padding:1.5rem; color:red; visibility:hidden; border-radius:50px; font-size: 26px;">Introduzca los datos correctamente</div>
+            <div id="mensajeErrorRegistro" style="padding:1.5rem; color:red; visibility:hidden; border-radius:50px; font-size: 20px;">Introduzca los datos correctamente</div>
         </form>
 
         <form action="web/log.php" method="post" class="col-12 col-md-6 formularioIngreso" class="textFormulario">
@@ -89,7 +89,7 @@ include "web/header.php";
             <!-- <input type="submit" value="Ingresar" class="botonFormulario"> -->
             <button class="botonFormulario" onclick="validarLog()">Ingresar</button>
 
-            <div id="mensajeErrorLogin" style="margin:1rem;padding:1.5rem; color:red; visibility:hidden; border-radius:50px; font-size: 26px;">Introduzca los datos correctamente</div>
+            <div id="mensajeErrorLogin" style="padding:.5rem; color:red; visibility:hidden; border-radius:50px; font-size: 20px;">Introduzca los datos correctamente</div>
         </form>
 
     </div>
